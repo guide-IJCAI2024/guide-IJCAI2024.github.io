@@ -90,36 +90,46 @@
       <div class="container is-max-desktop">
         <div class="columns is-centered">
           <div class="column has-text-centered">
-            <h1 class="title is-1 publication-title">Hierarchical Video-Moment Retrieval and Step-Captioning (CVPR 2023)
+            <h1 class="title is-1 publication-title">GUIDE: A Guideline-Guided Dataset for Instructional Video
+              Comprehension (IJCAI 2024)
             </h1>
             <div class="is-size-5 publication-authors">
               <span class="author-block">
-                <a>Jiafeng Liang</a><sup>*</sup> <sup>1</sup>,</span>
+                Jiafeng Liang<sup>1</sup>,</span>
               <!-- <a href="https://aszala.com/">Abhay Zala</a><sup>*</sup> <sup>1</sup>,</span> -->
               <span class="author-block">
                 <!-- <a href="https://j-min.io/">Shixin Jiang</a><sup>*</sup> <sup>1</sup>,</span> -->
-                <a>Shixin Jiang</a><sup>*</sup> <sup>1</sup>,</span>
+                Shixin Jiang<sup>1</sup>,</span>
               <span class="author-block">
-                <a href="https://satwikkottur.github.io/">Satwik Kottur</a><sup>2</sup>,</span>
+                <!-- <a href="https://j-min.io/">Shixin Jiang</a><sup>*</sup> <sup>1</sup>,</span> -->
+                Zekun Wang<sup>1</sup>,</span>
               <span class="author-block">
-                <a href="https://www.cs.cornell.edu/~xlchen/">Xilun Chen</a><sup>2</sup>,</span>
+                <!-- <a href="https://j-min.io/">Shixin Jiang</a><sup>*</sup> <sup>1</sup>,</span> -->
+                Haojie Pan<sup>3</sup>,</span>
               <span class="author-block">
-                <a href="https://research.facebook.com/people/oguz-barlas/">Barlas Oğuz</a><sup>2</sup>,</span>
+                <!-- <a href="https://j-min.io/">Shixin Jiang</a><sup>*</sup> <sup>1</sup>,</span> -->
+                Zerui Chen<sup>1</sup>,</span>
               <span class="author-block">
-                <a href="https://scholar.google.com/citations?user=hFKgapkAAAAJ&hl=en">Yashar
-                  Mehdad</a><sup>2</sup>,</span>
+                <!-- <a href="https://j-min.io/">Shixin Jiang</a><sup>*</sup> <sup>1</sup>,</span> -->
+                Zheng Chu<sup>1</sup>,</span>
               <span class="author-block">
-                <a href="https://www.cs.unc.edu/~mbansal/">Mohit Bansal</a><sup>1</sup>
-              </span>
-
+                <!-- <a href="https://j-min.io/">Shixin Jiang</a><sup>*</sup> <sup>1</sup>,</span> -->
+                Ming Liu<sup>1,2*</sup>,</span>
+              <span class="author-block">
+                <!-- <a href="https://j-min.io/">Shixin Jiang</a><sup>*</sup> <sup>1</sup>,</span> -->
+                Ruiji Fu<sup>3</sup>,</span>
+              <span class="author-block">
+                <!-- <a href="https://j-min.io/">Shixin Jiang</a><sup>*</sup> <sup>1</sup>,</span> -->
+                Zhongyuan Wang<sup>3</sup>,</span>
+              <span class="author-block">
+                <!-- <a href="https://j-min.io/">Shixin Jiang</a><sup>*</sup> <sup>1</sup>,</span> -->
+                Bing Qin<sup>1,2</sup></span>
             </div>
 
             <div class="is-size-5 publication-authors">
-              <span class="author-block"><sup>1</sup>University of North Carolina at Chapel Hill,</span>
-              <span class="author-block"><sup>2</sup>Meta AI</span>
-            </div>
-            <div class="is-size-5 publication-authors">
-              <span class="author-block"><sup>*</sup>Equal contribution</span>
+              <span class="author-block"><sup>1</sup>Harbin Institute of Technology, Harbin, China</span>
+              <span class="author-block"><sup>2</sup>Peng Cheng Laboratory, Shenzhen, China</span>
+              <span class="author-block"><sup>3</sup>Kuaishou Technology, Beijing, China</span>
             </div>
 
             <div class="column has-text-centered">
@@ -218,7 +228,6 @@
     </div>
   </section>
 
-
   <section class="section">
     <div class="container is-max-desktop">
       <!-- Abstract. -->
@@ -246,18 +255,16 @@
               steps.including their associated guideline steps, specifcstep descriptions and timestamps.
             </p>
             <p>
-              Our proposedbenchmark
-              consists of three sub-tasks to evaluatecomprehension ability of models:(1) Step Captioning: models have to
-              generate
-              captions for specifcsteps from videos.(2)Guideline Summarization:.models have to mine the common pattern
-              in taskrelated
-              videos and summarize a guideline from them(3)Guideline-Guided Captioning: models have togenerate captions
-              for specifc
-              steps under the guideof guideline. We evaluate plenty of foundationmodels with GUIDE and perform in-depth
-              analy.sis.
-              Given the diversity and practicality of GUIDEwe believe that it can be used as a better benchmarkfor
-              instructional video
-              comprehension.
+              Our proposed benchmark consists of three sub-tasks to evaluatecomprehension ability of models:(1) Step
+              Captioning: models have to generate captions for specifcsteps from videos.(2)Guideline Summarization:
+              models have to mine the common pattern
+              in task related videos and summarize a guideline from them(3)Guideline-Guided Captioning: models have
+              togenerate captions
+              for specifc steps under the guideof guideline. We evaluate plenty of foundationmodels with GUIDE and
+              perform in-depth
+              analysis. Given the diversity and practicality of GUIDEwe believe that it can be used as a better
+              benchmarkfor
+              instructional video comprehension.
             </p>
           </div>
         </div>
@@ -277,6 +284,32 @@
       <!--/ Paper video. -->
     </div>
   </section>
+  <section class="section">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Dataset Construction Pipeline</h2>
+
+          <h3 class="title is-4">Video Collection</h3>
+          <div class="content has-text-justified">
+            To ensure the widely-used of the GUIDE, we collect videos from 560 different instructional tasks across the
+            8 most commondomainsinourdaily life.
+          </div>
+          <h3 class="title is-4">Automatic Annotation</h3>
+          <div class="content has-text-justified">
+            The automatic annotation frame work contains two stages: Specific Steps Generation and Guideline Steps
+            Generation.
+          </div>
+          <img src="./static/images/automatic_annnotation.png" alt="Teaser" width="100%">
+          <h3 class="title is-4">Manual Annotation</h3>
+          <div class="content has-text-justified">
+            We employ an expert in each domain to adjust all guideline steps and require the annotators to refine the
+            specific steps generated by GPT-3.5-turbo and annotate the timestamps of steps by watching videos.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <section class="section">
     <div class="container is-max-desktop">
@@ -288,7 +321,7 @@
           <h3 class="title is-4">Comparison of Guide and other video datasets with annotations</h3>
 
           <div class="content has-text-justified">
-            HiREST covers videos of 1) various domains, 2) with many step annotations per video, and 3) high-quality
+            GUIDE covers videos of 1) various domains, 2) with many step annotations per video, and 3) high-quality
             step captions written by human annotators and gpt-3.5-turto.
           </div>
 
@@ -307,52 +340,23 @@
           </div>
 
 
-          <img src="./static/images/category_distribute.png" alt="Teaser" width="100%">
+          <img src="./static/images/category_distribute.png" alt="Teaser" width="100%"><!--todo-->
 
           <br><br>
 
-          <h3 class="title is-4">Step Caption Distribution</h3>
-          <!-- <div class="content has-text-justified">
-          Distribution of HiREST step captions by their first three words for 50 random samples. Words are often relate
-        </div> -->
-
-
-          <!-- <img src="./static/images/step_caption_sunburst.png" alt="Teaser" width="30%"> -->
-
-          <div class="columns is-centered">
-
-            <div class="column">
-              <div class="content">
-                <!-- <h3 class="title is-4">Step words</h3> -->
-                <div class="content has-text-justified">
-                  <p>
-                    Distribution of HiREST step captions by their first three words for 50 random samples.
-                    Many captions are related to actions or objects.
-                  </p>
-                </div>
-                <img src="./static/images/step_caption_sunburst.png" alt="Teaser" width="80%">
-
-              </div>
-            </div>
-
-            <div class="column">
-              <!-- <h3 class="title is-4">Matting</h3> -->
-              <div class="columns is-centered">
-                <div class="column content">
-                  <div class="content has-text-justified">
-                    <p>
-                      (a) Top 10 most common starting verbs in step captions.
-                      (b) Top 10 most common words in step captions.
-                      The top words typically refer to objects (e.g., water) or quantities (e.g., all).
-                    </p>
-                  </div>
-                  <img src="./static/images/word_distribution_combined.png" alt="Teaser" width="60%">
-                </div>
-
-              </div>
-            </div>
+          <h3 class="title is-4">Dataset Case</h3>
+          <div class="content has-text-justified">
+            We evaluate three video foundation models on GUIDE:VideoChat , Video-LLaMA and mPLUG-Owl. We evaluate four
+            language
+            foundation models on GUIDE:GPT-3.5-turbo ,GPT-4 ,Flan-T5-XXL and Vicuna-13B.
           </div>
-
+          <img src="./static/images/case_guide.png" alt="Teaser" width="100%">
+          <!-- <h2 class="subtitle has-text-centered"> -->
+          <div class="content has-text-justified">
+            Comparison of foundation models and ground-truth annotation for step captioning, guideline summarization and
+            guideline-guided captioning. Green, yellow, and red text denote ‘correct’, ‘partiallycorrect’,and ‘wrong’
+            respectively.
+          </div>
         </div>
       </div>
     </div>
@@ -395,52 +399,7 @@
   </div>
 </section> -->
 
-  <section class="section">
-    <div class="container is-max-desktop">
-      <div class="columns is-centered has-text-centered">
-        <div class="column is-four-fifths">
-          <h2 class="title is-3">Baseline Model</h2>
-          <div class="content has-text-justified">
-            We evaluate three video foundation models on GUIDE:VideoChat , Video-LLaMA and mPLUG-Owl.
-            We evaluate four language foundation models on GUIDE:GPT-3.5-turbo ,GPT-4 ,Flan-T5-XXL and Vicuna-13B.
-          </div>
 
-          <h3 class="title is-4">Experiment Results</h3>
-
-
-          <div class="content has-text-justified">
-            ......
-          </div>
-
-
-          <img src="./static/images/main_experiment_result.png" alt="Teaser" width="100%">
-          <!-- <h2 class="subtitle has-text-centered">
-          Illustration of our joint model that handles moment retrieval, moment segmentation, and step captioning tasks.
-          We learn a shallow multimodal transformer encoder layer that adapts the four pretrained models: EVA-CLIP (frozen),
-          Whisper (frozen), MiniLM (frozen), and CLIP4Caption (finetuned).
-        </h2> -->
-
-          <br><br><br>
-
-
-          <!-- <h3 class="title is-4">Hierarchical Video Information Retrieval</h3>
-
-          <div class="content has-text-justified">
-
-            Given a text query ‘How to make butter biscuits’,
-            our joint model predicts a relevant moment from a video, segments the moment into steps, and describes the
-            moment step-by-step.
-
-          </div>
-
-          <img src="./static/images/model_vs_gt_generation_example.png" alt="Teaser" width="100%"> -->
-
-
-
-        </div>
-      </div>
-    </div>
-  </section>
 
 
   <!-- <section class="section">
