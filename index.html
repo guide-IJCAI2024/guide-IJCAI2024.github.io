@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="HiREST: a holistic, hierarchical benchmark (+joint model) of multimodal retrieval and step-by-step summarization for videos.">
+  <meta name="keywords" content="HiREST, Information Retrieval, Video Search, Video Retrieval, Moment Retrieval, Moment Segmentation, Step Captoining">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>HiREST (CVPR 2023)</title>  
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script> -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <!-- <link rel="icon" href="./static/images/favicon.svg"> -->
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  <!-- <div class="navbar-menu">
+    <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+      <a class="navbar-item" href="https://keunhong.com">
+      <span class="icon">
+          <i class="fas fa-home"></i>
+      </span>
+      </a>
+
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">
+          More Research
+        </a>
+        <div class="navbar-dropdown">
+          <a class="navbar-item" href="https://hypernerf.github.io">
+            HyperNeRF
+          </a>
+          <a class="navbar-item" href="https://nerfies.github.io">
+            Nerfies
+          </a>
+          <a class="navbar-item" href="https://latentfusion.github.io">
+            LatentFusion
+          </a>
+          <a class="navbar-item" href="https://photoshape.github.io">
+            PhotoShape
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </div> -->
+</nav>
+
+<!-- Abhay Zala * 1 Jaemin Cho * 1 Satwik Kottur 2 Xilun Chen2 Barlas Oguz 2Yashar Mehdad 2Mohit Bansal1 -->
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">Hierarchical Video-Moment Retrieval and Step-Captioning (CVPR 2023)</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://aszala.com/">Abhay Zala</a><sup>*</sup> <sup>1</sup>,</span>
+            <span class="author-block">
+              <a href="https://j-min.io/">Jaemin Cho</a><sup>*</sup> <sup>1</sup>,</span>
+            <span class="author-block">
+              <a href="https://satwikkottur.github.io/">Satwik Kottur</a><sup>2</sup>,</span>
+            <span class="author-block">
+              <a href="https://www.cs.cornell.edu/~xlchen/">Xilun Chen</a><sup>2</sup>,</span>
+            <span class="author-block">
+              <a href="https://research.facebook.com/people/oguz-barlas/">Barlas Oğuz</a><sup>2</sup>,</span>
+            <span class="author-block">
+              <a href="https://scholar.google.com/citations?user=hFKgapkAAAAJ&hl=en">Yashar Mehdad</a><sup>2</sup>,</span>
+            <span class="author-block">
+              <a href="https://www.cs.unc.edu/~mbansal/">Mohit Bansal</a><sup>1</sup>
+            </span>
+
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>University of North Carolina at Chapel Hill,</span>
+            <span class="author-block"><sup>2</sup>Meta AI</span>
+          </div>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>*</sup>Equal contribution</span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <!-- <span class="link-block">
+                <a href="https://arxiv.org/pdf/2011.12948"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span> -->
+              <span class="link-block">
+                <a href="https://arxiv.org/abs/2303.16406"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              <!-- Video Link. -->
+              <!-- <span class="link-block">
+                <a href="https://www.youtube.com/watch?v=MrKrnHhk8IA"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                  </span>
+                  <span>Video</span>
+                </a>
+              </span> -->
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="https://github.com/j-min/HiREST"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code & Data</span>
+                  </a>
+              </span>
+              <!-- Dataset Link. -->
+              <!-- <span class="link-block">
+                <a href="https://github.com/google/nerfies/releases/tag/0.1"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="far fa-images"></i>
+                  </span>
+                  <span>Data</span>
+                  </a> -->
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<h4 class="subtitle has-text-centered">
+  <b>HiREST</b>: a holistic, hierarchical benchmark (+joint model) of multimodal retrieval and step-by-step summarization for
+  videos.
+</h4>
+
+<br>
+
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <!-- <video id="teaser" autoplay muted loop playsinline height="100%">
+        <source src="./static/videos/teaser.mp4"
+                type="video/mp4">
+      </video> -->
+      <!-- Image teaser -->
+      <!-- <embed src="./static/images/main_figure.pdf" alt="Teaser" width="100%"> -->
+
+      
+      
+      <!-- </h2> -->
+
+      <img src="./static/images/main_figure_compressed.png" alt="Teaser" width="100%">
+      <!-- <h2 class="subtitle has-text-centered"> -->
+
+      <div class="content has-text-justified">
+        Overview of four hierarchical tasks of <b>HiREST</b> dataset. 1) Video retrieval: find a video that is most
+        relevant to a given text query. 2) Moment retrieval: choose the relevant span of the video, by trimming the parts
+        irrelevant to the text query. 3) Moment segmentation: break down the span into several steps and identify the
+        start-end
+        boundaries of each step. 4) Step captioning: generate step-by-step textual summaries of the moment.
+      </div>
+        
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+          There is growing interest in searching for information from large video corpora. Prior works have studied relevant
+          tasks, such as text-based video retrieval, moment retrieval, video summarization, and video captioning in isolation,
+          without an end-to-end setup that can jointly search from video corpora and generate summaries. Such an end-to-end setup
+          would allow for many interesting applications, e.g., a text-based search that finds a relevant video from a video
+          corpus, extracts the most relevant moment from that video, and segments the moment into important steps with captions.
+          </p>
+          <p>
+          To address this, we present the <b>HiREST (HIerarchical REtrieval and STep-captioning)</b> dataset and propose a new
+          benchmark that covers hierarchical information retrieval and visual/textual stepwise summarization from an instructional
+          video corpus. HiREST consists of 3.4K text-video pairs from an instructional video dataset, where 1.1K videos have
+          annotations of moment spans relevant to text query and breakdown of each moment into key instruction steps with caption
+          and timestamps (totaling 8.6K step captions).
+          </p>
+          <p>
+          Our hierarchical benchmark consists of video retrieval, moment retrieval,
+          and two novel moment segmentation and step captioning tasks. In moment segmentation, models break down a video moment
+          into instruction steps and identify start-end boundaries. In step captioning, models generate a textual summary for each
+          step. We also present starting point task-specific and end-to-end joint baseline models for our new benchmark. While the
+          baseline models show some promising results, there still exists large room for future improvement by the community.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+
+    <!-- Paper video. -->
+    <!-- <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Video</h2>
+        <div class="publication-video">
+          <iframe src="https://www.youtube.com/embed/MrKrnHhk8IA?rel=0&amp;showinfo=0"
+                  frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div> -->
+    <!--/ Paper video. -->
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">HiREST Dataset</h2>
+
+
+        <h3 class="title is-4">Comparison of HiREST and other video datasets with step annotations</h3>
+
+        <div class="content has-text-justified">
+          HiREST covers videos of 1) various domains, 2) with many step annotations per video, and 3) high-quality step captions written by
+          human annotators.
+        </div>
+
+
+        <img src="./static/images/dataset_table.png" alt="Teaser" width="100%">
+
+        <!-- Add Space -->
+        <br><br>
+
+
+        <h3 class="title is-4">Video Category Distribution</h3>
+        <div class="content has-text-justified">
+          The videos and text queries are collected from the HowTo100M dataset.
+          There are a wide variety of categories for HiREST videos.
+          The most frequent categories are “Hobbies and Crafts”, “Food and Entertaining”, and “Home and Garden”.
+        </div>
+        
+        
+        <img src="./static/images/category_distributions.png" alt="Teaser" width="100%">
+
+        <br><br>
+
+        <h3 class="title is-4">Step Caption Distribution</h3>
+        <!-- <div class="content has-text-justified">
+          Distribution of HiREST step captions by their first three words for 50 random samples. Words are often relate
+        </div> -->
+        
+        
+        <!-- <img src="./static/images/step_caption_sunburst.png" alt="Teaser" width="30%"> -->
+
+        <div class="columns is-centered">
+        
+          <div class="column">
+            <div class="content">
+              <!-- <h3 class="title is-4">Step words</h3> -->
+              <div class="content has-text-justified">
+                <p>
+                  Distribution of HiREST step captions by their first three words for 50 random samples.
+                  Many captions are related to actions or objects.
+                </p>
+              </div>
+              <img src="./static/images/step_caption_sunburst.png" alt="Teaser" width="80%">
+        
+            </div>
+          </div>
+        
+          <div class="column">
+            <!-- <h3 class="title is-4">Matting</h3> -->
+            <div class="columns is-centered">
+              <div class="column content">
+                <div class="content has-text-justified">
+                  <p>
+                    (a) Top 10 most common starting verbs in step captions.
+                    (b) Top 10 most common words in step captions.
+                    The top words typically refer to objects (e.g., water) or quantities (e.g., all).
+                  </p>
+                </div>
+                <img src="./static/images/word_distribution_combined.png" alt="Teaser" width="60%">
+              </div>
+        
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+<!-- 
+<section class="section">
+  <div class="container is-max-desktop">
+
+    <div class="columns is-centered">
+
+
+
+      <div class="column">
+        <div class="content">
+          <h3 class="title is-4">Step words</h3>
+          <p>
+            Using <i>nerfies</i> you can create fun visual effects. This Dolly zoom effect
+            would be impossible without nerfies since it would require going through a wall.
+          </p>
+          <img src="./static/images/step_caption_sunburst.png" alt="Teaser" width="60%">
+
+        </div>
+      </div>
+
+      <div class="column">
+        <h3 class="title is-4">Matting</h3>
+        <div class="columns is-centered">
+          <div class="column content">
+            <p>
+              As a byproduct of our method, we can also solve the matting problem by ignoring
+              samples that fall outside of a bounding box during rendering.
+            </p>
+            <img src="./static/images/word_distribution_combined.png" alt="Teaser" width="40%">
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section> -->
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Joint Baseline Model</h2>
+        <div class="content has-text-justified">
+          We provide a joint baseline model that handles moment retrieval, moment segmentation, and step captioning tasks with a single
+          architecture.
+          We learn a shallow multimodal transformer that adapts the four pretrained models: EVA-CLIP (frozen),
+          Whisper (frozen), MiniLM (frozen), and CLIP4Caption (finetuned).          
+        </div>
+
+        <h3 class="title is-4">Architecture</h3>
+
+
+        <div class="content has-text-justified">
+
+        EVA-CLIP visual (frozen) encoder maps a video frame into a visual embedding, EVA-CLIP text encoder (frozen) maps a text query into a text
+        embedding, Whisper (frozen) extracts speech transcription from audio, MiniLM (frozen) text encoder maps the speech transcription into a
+        text embedding. To adapt the video, text, and audio embeddings, we finetune a two-layer multimodal encoder and a
+        two-layer text decoder, which are initialized from CLIP4Caption. We train the joint model in a
+        multi-task setup in a round-robin fashion, by sampling a batch from one of the data loaders at each step.
+
+        </div>
+          
+
+        <img src="./static/images/joint_model.png" alt="Teaser" width="100%">
+        <!-- <h2 class="subtitle has-text-centered">
+          Illustration of our joint model that handles moment retrieval, moment segmentation, and step captioning tasks.
+          We learn a shallow multimodal transformer encoder layer that adapts the four pretrained models: EVA-CLIP (frozen),
+          Whisper (frozen), MiniLM (frozen), and CLIP4Caption (finetuned).
+        </h2> -->
+
+        <br><br><br>
+
+
+        <h3 class="title is-4">Hierarchical Video Information Retrieval</h3>
+
+        <div class="content has-text-justified">
+
+        Given a text query ‘How to make butter biscuits’,
+        our joint model predicts a relevant moment from a video, segments the moment into steps, and describes the moment step-by-step.
+
+        </div>
+
+        <img src="./static/images/model_vs_gt_generation_example.png" alt="Teaser" width="100%">
+
+
+
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- <section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Hierarchical Video Information Retrieval</h2>
+        <div class="content has-text-justified">
+
+        <p>
+          
+        </p>
+
+        </div>
+
+        <img src="./static/images/model_vs_gt_generation_example.png" alt="Teaser" width="100%">
+
+      </div>
+    </div>
+  </div>
+</section> -->
+
+
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">Citation</h2>
+    Please cite our paper if you use our dataset and/or method in your projects.
+    <br><br>
+
+    <pre><code>@inproceedings{Zala2023HiREST,
+  author    = {Abhay Zala and Jaemin Cho and Satwik Kottur and Xilun Chen and Barlas Oğuz and Yashar Mehdad and Mohit Bansal},
+  title     = {Hierarchical Video-Moment Retrieval and Step-Captioning},
+  booktitle = {CVPR},
+  year      = {2023},
+}</code></pre>
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+      <a class="icon-link"
+         href="https://arxiv.org/abs/2303.16406">
+        <i class="fas fa-file-pdf"></i>
+      </a>
+      <a class="icon-link" href="https://github.com/j-min/HiREST" class="external-link" disabled>
+        <i class="fab fa-github"></i>
+      </a>
+    </div>
+    <div class="columns is-centered">
+      <!-- <div class="column is-8"> -->
+        <div class="content">
+          <!-- <p> -->
+            The webpage was adapted from <a
+              href="https://github.com/nerfies/nerfies.github.io">nerfies</a>.
+          <!-- </p> -->
+        </div>
+      <!-- </div> -->
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
