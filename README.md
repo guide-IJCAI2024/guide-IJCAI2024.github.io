@@ -5,7 +5,14 @@ This is the repository that contains source code for the [GUIDE website](https:/
 If you find GUIDE useful in your research, please cite the following paper:
 
 ```bibtex
-@inproceedings{
+@misc{liang2024guideguidelineguideddatasetinstructional,
+      title={GUIDE: A Guideline-Guided Dataset for Instructional Video Comprehension}, 
+      author={Jiafeng Liang and Shixin Jiang and Zekun Wang and Haojie Pan and Zerui Chen and Zheng Chu and Ming Liu and Ruiji Fu and Zhongyuan Wang and Bing Qin},
+      year={2024},
+      eprint={2406.18227},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV},
+      url={https://arxiv.org/abs/2406.18227}, 
 }
 ```
 
