@@ -239,35 +239,27 @@
           <h2 class="title is-3">Abstract</h2>
           <div class="content has-text-justified">
             <p>
-              There are substantial instructional videos on the Internet, which provide us tutorials for
-              completingvarious tasks.
-              Existing instructional video datasetsonly focus on specifc steps at the video level, lack.ing experiential
-              guidelines at
-              the task level. whichcan lead to beginners struggling to learn new tasksdue to the lack of relevant
-              experience.
-              Moreoverthe specific steps without guidelines are trivial andunsystematic, making it diffcult to provide a
-              cleartutorial.
+              There are substantial instructional videos on the Internet, which provide us tutorials for completing
+              various tasks. Existing instructional video datasetsonly focus on specifc steps at the video level,
+              lacking experiential guidelines at the task level. whichcan lead to beginners struggling to learn new
+              tasksdue to the lack of relevant experience. Moreover the specific steps without guidelines are trivial
+              and unsystematic, making it diffcult to provide a clear tutorial.
             </p>
             <p>
-              To address these problems, we present theGUIDE (Guideline-Guided) dataset, which
-              contains3.1K videos of
-              600 instructional tasks in 8 domainsrelated to our daily life. Specifcally, we annotateeach instructional
-              task with a
-              guideline, representinga common pattern shared by all task-related videosOn this basis, we annotate
-              systematic specifc
-              steps.including their associated guideline steps, specifcstep descriptions and timestamps.
+              To address these problems, we present the GUIDE (Guideline-Guided) dataset, which
+              contains 3.1K videos of 600 instructional tasks in 8 domains related to our daily life. Specifcally, we
+              annotate each instructional task with a guideline, representinga common pattern shared by all task-related
+              videos. On this basis, we annotate systematic specifc steps including their associated guideline steps,
+              specifcstep descriptions and timestamps.
             </p>
             <p>
-              Our proposed benchmark consists of three sub-tasks to evaluatecomprehension ability of models:(1) Step
-              Captioning: models have to generate captions for specifcsteps from videos.(2)Guideline Summarization:
-              models have to mine the common pattern
-              in task related videos and summarize a guideline from them(3)Guideline-Guided Captioning: models have
-              togenerate captions
-              for specifc steps under the guideof guideline. We evaluate plenty of foundationmodels with GUIDE and
-              perform in-depth
-              analysis. Given the diversity and practicality of GUIDEwe believe that it can be used as a better
-              benchmarkfor
-              instructional video comprehension.
+              Our proposed benchmark consists of three sub-tasks to evaluatecomprehension ability of models:(1)
+              <strong>Step Captioning:</strong> models have to generate captions for specifcsteps from
+              videos.(2)<strong>Guideline Summarization:</strong> models have to mine the common pattern in task related
+              videos and summarize a guideline from them.(3)<strong>Guideline-Guided Captioning:</strong> models have to
+              generate captions for specifc steps under the guideof guideline. We evaluate plenty of foundation models
+              with GUIDE and perform in-depth analysis. Given the diversity and practicality of GUIDEwe believe that it
+              can be used as a better benchmark for instructional video comprehension.
             </p>
           </div>
         </div>
@@ -295,11 +287,11 @@
 
           <h3 class="title is-4">Video Collection</h3>
           <div class="content has-text-justified">
-            In this stage, we aim to collect a large number of high-qualityinstructional videos. To ensure the
-            widely-used of the GUIDE.we collect videos from 560 different instructional tasks acrossthe 8 most common
+            In this stage, we aim to collect a large number of high-quality instructional videos. To ensure the
+            widely-used of the GUIDE. We collect videos from 560 different instructional tasks across the 8 most common
             domains in our daily life. We require annotators to collect videos containing explicit instructional
-            stepsand clearly defined time boundaries between these steps. Tofurther enhance the practicality of the
-            dataset, we also require the collected videos that include detailed video subtitles, i.e.each step
+            steps and clearly defined time boundaries between these steps. To further enhance the practicality of the
+            dataset, we also require the collected videos that include detailed video subtitles, i.e. each step
             accompanied by corresponding voice explanations.
           </div>
           <h3 class="title is-4">Automatic Annotation</h3>
@@ -359,9 +351,9 @@
           </div>
           <h3 class="title is-4">Video Category Distribution</h3>
           <div class="content has-text-justified">
-            The videos and text queries are collected from the HowTo100M dataset.
-            There are a wide variety of categories for HiREST videos.
-            The most frequent categories are “Hobbies and Crafts”, “Food and Entertaining”, and “Home and Garden”.
+            The videos and text queries are collected from the Kuaishou platform. There are a wide variety of categories
+            for HiREST videos. The most frequent categories are “Hobbies and Crafts”, “Food and Entertaining”, and “Home
+            and Garden”.
           </div>
 
 
@@ -371,9 +363,8 @@
 
           <h3 class="title is-4">Dataset Case</h3>
           <div class="content has-text-justified">
-            We evaluate three video foundation models on GUIDE:VideoChat , Video-LLaMA and mPLUG-Owl. We evaluate four
-            language
-            foundation models on GUIDE:GPT-3.5-turbo ,GPT-4 ,Flan-T5-XXL and Vicuna-13B.
+            We evaluate three video foundation models on GUIDE: VideoChat , Video-LLaMA and mPLUG-Owl. We evaluate four
+            language foundation models on GUIDE: GPT-3.5-turbo ,GPT-4 ,Flan-T5-XXL and Vicuna-13B.
           </div>
           <img src="./static/images/case_guide.png" alt="Teaser" width="100%">
           <!-- <h2 class="subtitle has-text-centered"> -->
